@@ -1,0 +1,6 @@
+1.登录
+form表单提交的input类型为submit；
+3.由于我使用了laravel框架进行开发,特别值得注意的是,在定义model的可填写字段中,可填写字段是以将字段名用引号括起来变成字符串传参的,一不小心就会将$fillable='id'写成$fillable=' id',多了一个空格就会引起使用字段与定义字段不匹配的问题.
+4QueryException in Connection.php line 729:
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list' (SQL: update `blog_user` set `user_password` = eyJpdiI6ImY5c0JMN3RIOUYyaTV0ZUVSUnVmeWc9PSIsInZhbHVlIjoick1KaENsQWh4U0FYNkZDRm16b1YrZz09IiwibWFjIjoiMGI2NWFiNjJlYmM4NjAxMjcxMGMxYTAwOGRiMDlmNjBlM2ExMjY4Y2Q5MzgyNzJlOTMzZTBiZWI0NzllOWM4YSJ9, `updated_at` = 2017-07-05 14:08:39 where `user_id` = 1)
+费时一个小时。解决 protected $primaryKey='user_id';//zhuyi改为 protected $primaryKey='id';    public $timestamps = false;这个空格很重要
