@@ -44,7 +44,7 @@
 				<dt>栏目管理</dt>
 				<dd>
 					<ul class="clearfix">
-						<li><a href="javascript:;" _link="column.html">栏目管理</a></li>
+						<li><a href="/admin/" _link="column.html">栏目管理</a></li>
 					</ul>
 				</dd>
 			</dl>

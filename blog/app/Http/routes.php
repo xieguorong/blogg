@@ -25,8 +25,12 @@ Route::group(['middleware' => ['web','admin.login'],'prefix'=>'admin','namespace
     Route::get('main','MainController@index');
     Route::get('index','IndexController@index');
     Route::get('quite','LoginController@quite');
-    Route::any('pass','IndexController@pass');
+    Route::any('pass','IndexController@pass');//修改密码
     Route::resource('category','CategoryController');//用一个路由控制一堆路由
+    Route::post('category/cateOrder','CategoryController@changeOrder');//分类排序
+    Route::resource('artical','ArticalController');
+    Route::any('upload','CommonController@upload');//上传图片
+
 
 
 });
